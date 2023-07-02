@@ -15,9 +15,9 @@ Supported currencies:
 
 ![mujryj](img/fota2.jpg)
 
-Used technologies
-HTML
-CSS
-JavaScript
-BEM
-Normalize
+Used technologies:
+- HTML
+- CSS
+- JavaScript
+- BEM
+- Normalize
