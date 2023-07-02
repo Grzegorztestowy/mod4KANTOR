@@ -13,5 +13,4 @@ Supported currencies:
 - British Pound
 - Swiss Franc
 
-See You
 ![mujryj](img/fota2.jpg)
