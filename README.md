@@ -14,3 +14,10 @@ Supported currencies:
 - Swiss Franc
 
 ![mujryj](img/fota2.jpg)
+
+Used technologies
+HTML
+CSS
+JavaScript
+BEM
+Normalize
