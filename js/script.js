@@ -1,36 +1,51 @@
-let formElement = document.querySelector(".js-form")
-let currencyElement = document.querySelector(".js-currency")
-let amountElement = document.querySelector(".js-amount")
-let resultElement = document.querySelector(".js-result")
+{
+	const calculateResult = (amount, currency) => {
 
-let currencyEuro = 4.69;
-let currencyDolar = 4.37;
-let currencyPound = 5.34;
-let currencyFrank = 4.76;
+		const currencyEuro = 4.69;
+		const currencyDolar = 4.37;
+		const currencyPound = 5.34;
+		const currencyFrank = 4.76;
 
-formElement.addEventListener("submit", (event) => {
-	event.preventDefault();
+		switch (currency) {
+			case "euro":
+				return amount / currencyEuro;
 
-	let currency = currencyElement.value
-	let amount = amountElement.value
-	let result = resultElement.value
+			case "dolar":
+				return amount / currencyDolar;
 
-	switch (currency) {
-		case "euro":
-			result = amount / currencyEuro;
-			break;
+			case "pound":
+				return amount / currencyPound;
 
-		case "dolar":
-			result = amount / currencyDolar;
-			break;
-		case "pound":
-			result = amount / currencyPound;
-			break;
-
-		case "frank":
-			result = amount / currencyFrank;
+			case "frank":
+				return amount / currencyFrank;
 	}
+};
+		const updateResultText = (amount, result, currency) => {
+			const resultElement = document.querySelector(".js-result");
+			resultElement.innerText = result.toFixed(4);
+		}
 
-	resultElement.innerText = result.toFixed(3);
+		const onFormSubmit = (event) => {
 
-});
+			event.preventDefault();
+
+			const currencyElement = document.querySelector(".js-currency");
+			const amountElement = document.querySelector(".js-amount");
+		
+
+			const currency = currencyElement.value
+			const amount = +amountElement.value
+
+			let result = calculateResult(amount, currency);
+
+			updateResultText (amount, result, currency);
+		};
+
+	const init = () => { 
+		const formElement = document.querySelector(".js-form");
+		formElement.addEventListener("submit", onFormSubmit);
+	};
+
+	init();
+
+}
