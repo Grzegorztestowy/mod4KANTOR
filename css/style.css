@@ -11,6 +11,8 @@ html {
     background-color: #d2d2e9;
     background-image: url("../img/money.jpg");
     color: #fff;
+    background-size: cover;
+    min-height: 100vh;
 }
 
 .form {
